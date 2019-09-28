@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var p1 = document.getElementById("p1");
+				var val = document.getElementById("val");
+				var btn = document.getElementById("btn");
+				//随机验证码
+				function fn(){
+					var n1 = Math.floor(Math.random()*10);
+					var n2 = Math.floor(Math.random()*10);
+					var n3 = String.fromCharCode(Math.floor(Math.random()*26)+65);
+					var n4 = String.fromCharCode(Math.floor(Math.random()*26)+65);
+					p1.innerHTML = n1+""+n2+n3+n4;
+				}
+				fn();
+				p1.onclick = function(){
+					fn();
+				}
+				btn.onclick = function(){
+					if(p1.innerHTML == val.value.toUpperCase()){
+						alert("验证码输入正确")
+					}else{
+						alert("验证码输入有误")
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<span id="p1">12AB</span>
+		<br />
+		<input type="text" id="val" />
+		<button id="btn">按钮</button>
+	</body>
+</html>

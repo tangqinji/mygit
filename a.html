@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0;
+			}
+			#box{
+				width: 100px;
+				height: 400px;
+				background: red;
+				float: right;
+				position: relative;
+				top: 0px;
+				right: 0px;
+				transition: all 1s;
+			}
+			#obox{
+				width: 100%;
+				height: 400px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById("box");
+				window.onscroll = function(){
+					var top = document.documentElement.scrollTop||document.body.scrollTop;
+					if(top>=2440){
+						box.style.position = "fixed";
+						box.style.top = "100px";
+					}else{
+						box.style.position = "relative";
+						box.style.top = "0px";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img src="../../a2/img/5a68206b56f12.jpg" />
+		<img src="../../a2/img/5a68206b56f12.jpg" />
+		<div id="obox">
+			<div id="box"></div>
+		</div>
+		<img src="../../a2/img/5a68206b56f12.jpg" />
+	</body>
+</html>

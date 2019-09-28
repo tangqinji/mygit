@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//BOM部分方法
+			
+			//alert("弹窗");
+			//window.alert("弹窗");
+			
+			//多了个取消按钮
+			//confirm("弹窗")
+			
+			//带输入框的弹窗
+			//prompt("请输入一个数");
+			
+			//弹出打印框
+			//print();
+			
+			//open("https://www.baidu.com","_blank","width=1200,height=300,top=100,left=500");
+		
+			//方法1，创建延时器
+			setTimeout(function(){
+				console.log("a");
+			},3000);
+			
+			//方法2，创建延时器
+			setTimeout(fn,3000);
+			function fn(){
+				console.log("b");
+			}
+			
+			//方法3，创建延时器
+			var timer = setTimeout("console.log('c')",3000);
+			
+			//取消延时器
+			clearTimeout(timer);
+			
+			//关闭窗口
+			//close();
+			//window.open("about:blank","_self").close()
+			
+			//5秒后关闭浏览器
+			setTimeout(function(){
+				window.open("about:blank","_self").close()
+			},5000)
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

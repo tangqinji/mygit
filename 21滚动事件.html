@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				height: 3000px;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				//滚动事件
+				window.onscroll = function(){
+					//console.log("a");
+					//获取滚动条距离顶部的距离
+					var top = document.body.scrollTop || document.documentElement.scrollTop;
+					console.log(top);
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//节点种类
+			/*
+			div标签:元素节点
+			id="box" :属性节点
+			这是一个div :文本节点
+			
+			*/
+			window.onload = function(){
+				var box = document.getElementById("box");
+				console.log(box.innerHTML);
+				
+				//获取元素节点：getElementsByTagName()方法将返回一个数组
+				var obox = document.getElementsByTagName("div");//获取文档所有的div
+				console.log(obox[1].innerHTML);
+				
+				// getElementsByName(),获取name属性值为myinput的元素，返回数组
+				var inp = document.getElementsByName("myinput");
+				console.log(inp.length);
+				
+				//getElementsByClassName()方法可以获取相同类名的元素，返回一个对象数组 
+				var p1 = document.getElementsByClassName("p1")[0];
+				console.log(p1.innerHTML);
+				
+				var list1 = document.getElementsByClassName("list1")[0];
+				var oli = list1.getElementsByTagName("li");
+				console.log(oli);
+				
+				//getAttribute()方法将获取元素中某个属性的值
+				console.log(box.title);
+				console.log(box.abc);//"undefined"
+				
+				console.log(box.getAttribute("title"));
+				console.log(box.getAttribute("abc"));
+				
+				//setAttribute()方法将设置元素中某个属性和值。
+				box.setAttribute("title","这是一个");
+				box.setAttribute("name","这是一个");
+				
+				//removeAttribute() 可以移除 HTML 属性。
+				box.removeAttribute("id");
+				
+				//innerText
+				console.log(box.innerHTML);//<span>1这是一个div</span>
+				console.log(box.innerText);//"1这是一个div"
+				console.log(box.outerHTML);//<div title="这是一个" abc="cdf" name="这是一个"><span>1这是一个div</span></div>
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box" title="盒子" abc="cdf">
+			<span>1这是一个div</span>
+		</div>
+		<div name="myinput">2这是一个div</div>
+		<input type="text" name="myinput" value="123"/>
+		<input type="text" name="myinput" value="456"/>
+		<p class="p1">hdjgdhj</p>
+		<ul class="list1">
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+		<ul class="list2">
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+	</body>
+</html>

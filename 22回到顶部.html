@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: fixed;
+			right: 10px;
+			bottom: 20px;
+			display: none;
+		}
+		body{
+			height: 4000px;
+		}
+		
+		</style>
+		<script>
+			/*
+			 1, 回到顶部, 当滚动条滚动到距离顶部超过2000时, 显示回到顶部(红色部分), 并当点击回到顶部时,让页面回到顶部。
+			 * 
+			 * */
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var top = 0 ;
+				window.onscroll = function(){
+					top = document.body.scrollTop || document.documentElement.scrollTop;
+					if(top>=2000){
+						box.style.display = "block";
+					}else{
+						box.style.display = "none";
+					}
+				}
+				box.onclick = function(){
+					
+					var timer= setInterval(function(){
+						top = Math.floor(top*0.8);
+						document.body.scrollTop=document.documentElement.scrollTop=top;
+						console.log(top);
+						if(top==0){
+							clearInterval(timer);
+						}
+					},100)				
+					
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+	<div id="box">回到顶部</div>
+	</body>
+</html>
